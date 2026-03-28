@@ -1,1 +1,292 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melhor site™</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #36393f;
+      color: #dcddde;
+      font-family: 'Roboto', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+    }
+
+    .servers {
+      background: #202225;
+      width: 72px;
+      padding: 12px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .server-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 0 0 3px #202225;
+    }
+
+    .server-icon:hover {
+      border-radius: 30%;
+    }
+
+    .server-ktj {
+      background-image: url('https://cdn.discordapp.com/icons/1403472317547286598/d42c5085bbc8d6ff2f70933f3f1e34cf.png?size=512');
+      border: 3px solid #f04747;
+      position: relative;
+    }
+
+    .server-ktj::after {
+      content: "☠️";
+      position: absolute;
+      font-size: 22px;
+      top: -10px;
+      right: -10px;
+    }
+
+    .channels {
+      background: #2f3136;
+      width: 240px;
+      padding: 16px 8px;
+    }
+
+    .server-name {
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff;
+      padding: 0 16px 12px;
+      border-bottom: 2px solid #202225;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .channel {
+      padding: 8px 16px;
+      color: #96989d;
+      cursor: pointer;
+      border-radius: 4px;
+      margin: 2px 8px;
+    }
+
+    .channel:hover {
+      background: #393c43;
+      color: #fff;
+    }
+
+    .channel.nuked {
+      color: #f04747;
+      text-decoration: line-through;
+    }
+
+    .chat {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #36393f;
+    }
+
+    .nuked-banner {
+      background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #ff0000);
+      color: #000;
+      text-align: center;
+      padding: 14px;
+      font-size: 19px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      animation: rainbow 1.8s linear infinite;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .troll-text {
+      font-size: 32px;
+      color: #ff0000;
+      text-align: center;
+      margin: 25px 0 20px;
+      text-shadow: 0 0 15px #ff0000;
+      animation: shake 0.6s infinite;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-8px); }
+      75% { transform: translateX(8px); }
+    }
+
+    .messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .message {
+      margin-bottom: 24px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+      border: 2px solid #202225;
+    }
+
+    .username {
+      font-weight: 600;
+    }
+
+    .timestamp {
+      color: #72767d;
+      font-size: 12px;
+      margin-left: 8px;
+    }
+
+    .content {
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    /* Estilo para a imagem enviada */
+    .message-image {
+      margin-top: 10px;
+      max-width: 100%;
+      border-radius: 8px;
+      border: 2px solid #202225;
+    }
+
+    .message-input {
+      height: 68px;
+      background: #40444b;
+      margin: 0 16px 16px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      color: #72767d;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Servidores -->
+  <div class="servers">
+    <div class="server-icon" style="background: #5865f2;">D</div>
+    <div class="server-icon server-ktj"></div>
+    <div class="server-icon" style="background:#ff0000;">☠️</div>
+  </div>
+
+  <!-- Canais -->
+  <div class="channels">
+    <div class="server-name">
+      🔥 KTJ NUKADO 🔥
+      <span style="margin-left:auto; color:#f04747;">☠️ DESTRUIDO</span>
+    </div>
+
+    <div style="padding: 12px 16px; color:#b9bbbe; font-size:13px; text-transform:uppercase;">Canais de Texto</div>
+    <div class="channel nuked">#geral</div>
+    <div class="channel nuked">#memes</div>
+    <div class="channel nuked">#fotos-da-ktj</div>
+    <div class="channel" style="color:#43b581;">#luto-da-ktj</div>
+
+    <div style="padding: 12px 16px; color:#b9bbbe; font-size:13px; text-transform:uppercase; margin-top:20px;">Canais de Voz</div>
+    <div class="channel nuked">🔇 Sala Principal</div>
+  </div>
+
+  <!-- Chat -->
+  <div class="chat">
+    <div class="nuked-banner">
+      🚨 KTJ FOI NUKADA NOVAMENTE E NÃO VOLTA MAIS 🚨
+    </div>
+
+    <div class="chat-header">
+      luto-da-ktj
+    </div>
+
+    <div class="messages" id="messages">
+      <div class="troll-text">KTJ = KATO BOSTA</div>
+
+      <!-- Mensagem do Nuker Master -->
+      <div class="message">
+        <div class="avatar" id="avatar-nuker"></div>
+        <div class="message-content">
+          <span class="username" style="color: #f04747;">Ena Dream BBQ</span>
+          <span class="timestamp" id="time-nuker">Hoje às --:--</span>
+          <div class="content">
+            Servidor brutalmente nukado em menos de 5 minutos.<br>
+            <strong>Missão cumprida com sucesso.</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mensagem do Ex-Dono com a foto -->
+      <div class="message">
+        <div class="avatar" id="avatar-exdono"></div>
+        <div class="message-content">
+          <span class="username" style="color: #00ff9d;">Ex-Dono da KTJ</span>
+          <span class="timestamp" id="time-exdono">Hoje às --:--</span>
+          <div class="content">
+            anos de servidor... acabou em minutos kkkkkkkk<br>
+            Tô chorando aqui mano 😭
+          </div>
+          <!-- Imagem que você pediu -->
+          <img src="https://i.pinimg.com/736x/1d/86/97/1d86977e07c88610f1bb8a99c1d59640.jpg" 
+               class="message-image" 
+               alt="Chorando">
+        </div>
+      </div>
+    </div>
+
+    <div class="message-input">
+      Você não pode mandar mensagem aqui... o servidor foi nukado 😂☠️
+    </div>
+  </div>
+
+  <script>
+    // === CONFIGURAÇÃO DE AVATARES ===
+    const avatarNuker = "https://wallpapercave.com/wp/wp15181158.webp";
+    const avatarExDono = "https://media.discordapp.net/attachments/1485093550260752496/1487525986323927252/me_when_my_girl_break_up_whith_me.gif?ex=69c97608&is=69c82488&hm=d29dfd7ab4c32a99504a75a145463bd4a33e389719bb5f84e9431c1dcea352be&=";
+
+    document.getElementById("avatar-nuker").style.backgroundImage = `url('${avatarNuker}')`;
+    document.getElementById("avatar-exdono").style.backgroundImage = `url('${avatarExDono}')`;
+
+    // === ATUALIZAÇÃO DE HORÁRIO EM TEMPO REAL ===
+    function atualizarHorarios() {
+      const agora = new Date();
+      let horas = agora.getHours();
+      let minutos = agora.getMinutes();
+      
+      const formatoHora = `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`;
+
+      document.getElementById("time-nuker").textContent = `Hoje às ${formatoHora}`;
+      document.getElementById("time-exdono").textContent = `Hoje às ${formatoHora}`;
+    }
+
+    atualizarHorarios();
+    setInterval(atualizarHorarios, 60000);
+  </script>
+</body>
+</html>
